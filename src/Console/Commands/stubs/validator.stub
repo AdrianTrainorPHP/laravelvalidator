@@ -1,0 +1,38 @@
+<?php
+
+namespace DummyNamespace;
+
+use App\Validators\Validator;
+
+class DummyClass
+{
+    use Validator;
+
+    /**
+     * Define validator rules
+     *
+     * @var array
+     */
+    protected $rules = [
+        // 'title' => 'required'
+    ];
+
+    /**
+     * Set custom error messages
+     *
+     * @var array
+     */
+    protected $messages = [
+        // 'title.required' => 'The title field is required.'
+    ];
+
+    /**
+     * Rename attributes
+     *
+     * @var array
+     */
+    protected $customAttributes = [
+        // 'title' => 'title',
+    ];
+
+}
