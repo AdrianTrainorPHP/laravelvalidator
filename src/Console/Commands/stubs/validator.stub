@@ -2,7 +2,7 @@
 
 namespace DummyNamespace;
 
-use App\Validators\Validator;
+use AdrianTrainor\LaravelValidator\Traits\Validator;
 
 class DummyClass
 {
@@ -32,7 +32,7 @@ class DummyClass
      * @var array
      */
     protected $customAttributes = [
-        // 'title' => 'title',
+        // 'title' => 'name',
     ];
 
 }

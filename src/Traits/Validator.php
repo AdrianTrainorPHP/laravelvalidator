@@ -1,12 +1,12 @@
 <?php
-namespace AdrianTrainor\LaravelValidator\Support\Validators;
+namespace AdrianTrainor\LaravelValidator\Traits;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator as IlluminateValidator;
 
 /**
  * Trait Validator
- * @package AdrianTrainor\LaravelValidator\Support\Validators
+ * @package AdrianTrainor\LaravelValidator\Traits
  */
 trait Validator
 {
