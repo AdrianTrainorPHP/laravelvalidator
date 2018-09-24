@@ -14,12 +14,11 @@ class ValidatorFactory
 {
     /**
      * @param $class
-     * @param Request|array $request
      * @return Validator
      * @throws ClassNotFoundException
      * @throws TypeErrorException
      */
-    public static function generate($class, $request)
+    public static function generate($class)
     {
         if (!isset($class) || !is_string($class))
             throw new TypeErrorException('No class name provided');
@@ -27,6 +26,6 @@ class ValidatorFactory
         if (!class_exists($class))
             throw new ClassNotFoundException('Class "' . $class . '" not found', new \ErrorException(''));
 
-        return new $class($request);
+        return new $class();
     }
 }
