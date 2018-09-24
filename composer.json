@@ -1,7 +1,7 @@
 {
     "name": "adriantrainor/laravelvalidator",
-    "description": "Laravel Validator helper to ",
-    "version": "5.6.0",
+    "description": "Laravel Validator helper",
+    "version": "5.6.1",
     "license": "MIT",
     "authors": [
         {
