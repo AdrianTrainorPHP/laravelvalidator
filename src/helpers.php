@@ -1,7 +1,7 @@
 <?php
 if (!function_exists('validatorFactory')) {
-    function validatorFactory($class, $request)
+    function validatorFactory($class)
     {
-        return app('validatorFactory')->generate($class, $request);
+        return \AdrianTrainor\LaravelValidator\Factory\ValidatorFactory::generate($class);
     }
 }
