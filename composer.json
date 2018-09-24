@@ -2,11 +2,11 @@
     "name": "adriantrainor/laravelvalidator",
     "description": "Laravel Validator helper to ",
     "version": "5.6.0",
-    "license": "",
+    "license": "MIT",
     "authors": [
         {
             "name": "Adrian Trainor",
-            "email": "adriantrainor.developer@gamil.com"
+            "email": "adriantrainor2015@gamil.com"
         }
     ],
     "require": {
