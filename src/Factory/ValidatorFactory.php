@@ -1,7 +1,6 @@
 <?php
 namespace AdrianTrainor\LaravelValidator\Factory;
 
-use Illuminate\Http\Request;
 use Psy\Exception\TypeErrorException;
 use Symfony\Component\Debug\Exception\ClassNotFoundException;
 use Illuminate\Support\Facades\Validator;
