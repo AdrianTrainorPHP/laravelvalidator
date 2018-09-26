@@ -61,27 +61,74 @@ class PostsValidator
 }
 ```
 
-##### Simple usage
+##### Example of a unique rule which can behave differently depending on whether the Post is being created or edited.
+
+
 ```
+<?php
+namespace App\Validators;
+
+use AdrianTrainor\LaravelValidator\Traits\Validator;
+use App\Models\Post;
+
+class PostsValidator
+{
+    use Validator;
+
+    /**
+     * Define validator rules
+     *
+     * @var array
+     */
+    protected $rules = [
+        'title' => 'required|unique'
+    ];
+
+    /**
+     * Rename attributes
+     *
+     * @var array
+     */
+    protected $customAttributes = [
+        'title' => 'name',
+    ];
+
+    /**
+     * @param Post $post
+     * @return \Illuminate\Contracts\Validation\Validator
+     */
+    public function edit(Post $post)
+    {
+        return $this->make($post->toArray(), [
+            'title' => [
+                'required',
+                Rule::unique('posts')->ignore($post->id),
+            ]
+        ]);
+    }
+}
+
+
 <?php
 namespace App\Http\Controllers;
 
 use App\Validators\PostsValidator;
 
 class PostsController extends Controller {
-    
+
     public function create(Request $request) {
         
-        $validator = validatorFactory(PostsValidator::class)->make($request);
+        // Validate using default rules
+        $validator = validatorFactory(PostsValidator::class)->make($request->all());
         
-        if ($validator->fails())
-            return redirect()
-                ->back()
-                ->withErrors($validator->errors)
-                ->withInput($request->all());
+    }
+
+    public function edit(Request $request) {
+        
+        // Validate using a unique exception rule on edit
+        $validator = validatorFactory(PostsValidator::class)->edit($post);
         
     }
 }
+    
 ```
-
-##### 
